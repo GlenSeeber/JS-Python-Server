@@ -15,10 +15,15 @@ client.connect(ADDR)
 def send(msg):
     message = msg.encode(FORMAT)
     msg_length = len(message)
+    #send_length is your header
     send_length = str(msg_length).encode(FORMAT)
+    # add padding
     send_length += b' ' * (HEADER - len(send_length))
+    #send header
     client.send(send_length)
+    #send message
     client.send(message)
+    # print what you recieve back from your client
     print(client.recv(2048).decode(FORMAT))
 
 while True:
