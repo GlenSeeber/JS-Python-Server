@@ -2,7 +2,7 @@ import socket
 import threading
 
 HEADER = 64
-PORT = 5050
+PORT = 5000
 # my linux laptop: 192.168.1.45
 SERVER = socket.gethostbyname(socket.gethostname())
 ADDR = (SERVER, PORT)
@@ -29,6 +29,7 @@ def handle_client(conn, addr):
                 break
             # what's the network information of the client who connected
             print(f"[addr: {addr}] msg: {msg}")
+            output = ''
             try:
                 # check if the message (not the header) is an int 
                 output = int(msg)
