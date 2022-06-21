@@ -15,5 +15,5 @@ const server = net.createServer((socket) => {
 
 // Open server on port
 server.listen(5050, () => {
-  console.log('opened server on', server.address().port);
+  console.log('opened server on', server.address().address);
 });
