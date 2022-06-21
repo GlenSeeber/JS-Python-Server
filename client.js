@@ -1,17 +1,12 @@
-// Node.js socket client script
-const net = require('net');
+const io =  require("socket.io-client");
 
-// Connect to a server @ port 9898
-const client = net.createConnection(5050, "fe80::4407:f169:6f4f:2e43%11", () => {
-  console.log('CLIENT: I connected to the server.');
-  client.write('CLIENT: Hello this is client!');
+
+const socket = io("172.91.45.85", {
+
 });
 
-client.on('data', (data) => {
-  console.log(data.toString());
-  client.end();
-});
+socket.on("connect", () =>{
+  socket.on("recieve_msg", () =>{})
 
-client.on('end', () => {
-  console.log('CLIENT: I disconnected from the server.');
+  socket.emit("send_msg", { a: "b", c: [] });
 });
