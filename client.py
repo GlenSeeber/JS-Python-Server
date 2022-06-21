@@ -6,7 +6,7 @@ FORMAT = 'utf-8'
 DISCONNECT_MESSAGE = "!DISCONNECT"
 # what is the IP address to the server you are connecting to?
 # if you're running this locally, you'll need the private IP
-SERVER = "192.168.1.45"
+SERVER = "172.16.225.152"
 ADDR = (SERVER, PORT)
 
 client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
